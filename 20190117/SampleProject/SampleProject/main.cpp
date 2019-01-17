@@ -65,7 +65,7 @@ int main()
 
   {
     auto writer = vtkSmartPointer<vtkXMLDataSetWriter>::New();
-    writer->SetFileName("C:\\test\\Result.vtu");
+    writer->SetFileName("C:\\test\\Results.vtu");
     writer->SetInputData(field);
     writer->Update();
   }

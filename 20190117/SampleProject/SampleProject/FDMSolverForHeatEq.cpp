@@ -11,8 +11,6 @@
 #include <vtkCellData.h>
 #include <vtkCell.h>
 
-#include <vtkSmartPointer.h>
-
 using namespace std;
 
 FDMSolverForHeatEq::FDMSolverForHeatEq()
@@ -28,7 +26,6 @@ FDMSolverForHeatEq::~FDMSolverForHeatEq()
 void FDMSolverForHeatEq::SolveHeatEquationForAllStep(vtkUnstructuredGrid *out_field, const int &in_endStep)
 {
   vtkIdType NumCellsInfield = out_field->GetNumberOfCells();
-  //const double alpha = 0.01;
   SetParameters(out_field, alpha); // 解析パラメータ
   auto initResults = vtkSmartPointer<vtkDoubleArray>::New();
   initResults->SetName("Results");
@@ -108,7 +105,6 @@ bool FDMSolverForHeatEq::SolveHeatEquationForOneStep(vtkUnstructuredGrid *out_fi
 
 void FDMSolverForHeatEq::SetParameters(vtkUnstructuredGrid *out_field, const double &in_alpha)
 {
-  // 解析パラメータ ----
   double *fieldBounds = out_field->GetBounds();
   // out_field の各方向の大きさ
   this->lengths[0] = fieldBounds[1] - fieldBounds[0];

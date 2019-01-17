@@ -11,8 +11,6 @@
 #include <vtkCellCenters.h>
 #include <vtkCellData.h>
 
-#include <vtkSmartPointer.h>
-
 VoxelMeshGeneratorByVtk::VoxelMeshGeneratorByVtk()
 {
 }
