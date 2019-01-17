@@ -79,9 +79,7 @@ bool FDMSolverForHeatEq::SolveHeatEquationForOneStep(vtkUnstructuredGrid *out_fi
 
     const double beforeRes = beforeResults->GetTuple1(vId);
 
-    // TODO：変数名変更
     const vtkIdType *peripheralXYZs = VtkIndexUtility::GetPeripheralXYZs(xyzId[0], xyzId[1], xyzId[2], cellDims);
-
     const double deltas[3] = { this->deltas[0], this->deltas[1], this->deltas[2] };
 
     // 急にラムダ使ってすまない
