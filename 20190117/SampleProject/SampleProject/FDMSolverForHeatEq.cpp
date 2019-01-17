@@ -134,16 +134,13 @@ void FDMSolverForHeatEq::SetParameters(vtkUnstructuredGrid *out_field, const dou
       1.0 / (this->deltas[0] * this->deltas[0]) +
       1.0 / (this->deltas[1] * this->deltas[1]) +
       1.0 / (this->deltas[2] * this->deltas[2])
-      ));
+    ));
 }
 
-// 周辺のボクセルから平均値を求める
+// ボクセル周辺6個の平均をとる
 void FDMSolverForHeatEq::SetAveValueFromSurroundings(const vtkIdType in_voxelId, vtkDoubleArray *out_results, vtkDataArray *in_properties)
 {
   const vtkIdType *xyzId = VtkIndexUtility::ConvertVtkCellIdToXYZ(in_voxelId, cellDims);
-
-  // ボクセル周辺6個の平均をとる
-
   const vtkIdType *peripheralXYZs = VtkIndexUtility::GetPeripheralXYZs(xyzId[0], xyzId[1], xyzId[2], cellDims);
 
   int count = 0;
