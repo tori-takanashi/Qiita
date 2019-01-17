@@ -131,7 +131,6 @@ void VoxelMeshGeneratorByVtk::AddIs3DModelIds(vtkPoints *in_voxelCenters)
     vtkSmartPointer<vtkImplicitPolyDataDistance>::New();
   implicitPolyDataDistance->SetInput(polyData);
 
-  // “àŠO”»’è
   for (vtkIdType bgId = 0; bgId < in_voxelCenters->GetNumberOfPoints(); bgId++)
   {
     const double *currentCenter = in_voxelCenters->GetPoint(bgId);
