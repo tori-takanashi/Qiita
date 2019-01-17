@@ -19,14 +19,8 @@ using namespace std;
 int main()
 {
   // •Â‹È–Ê“Ç‚ÝŽæ‚è
-  //auto reader = vtkSmartPointer<vtkSTLReader>::New();
-  //reader->SetFileName("C:\\sandbox\\stomach_skelly.stl");
-  //reader->SetFileName("C:\\sandbox\\sphere.stl");
-  //reader->SetFileName("C:\\sandbox\\Bayonet.stl");
-  //reader->SetFileName("C:\\sandbox\\sample1.stl");
-
   auto reader = vtkSmartPointer<vtkDataSetReader>::New();
-  reader->SetFileName("C:\\sandbox\\bunny.vtk");
+  reader->SetFileName("C:\\test\\bunny.vtk");
   reader->Update();
 
   // PolyData‚É•ÏŠ·
@@ -71,7 +65,7 @@ int main()
 
   {
     auto writer = vtkSmartPointer<vtkXMLDataSetWriter>::New();
-    writer->SetFileName("C:\\sandbox\\Result.vtu");
+    writer->SetFileName("C:\\test\\Result.vtu");
     writer->SetInputData(field);
     writer->Update();
   }
