@@ -132,16 +132,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="FDMSolverForHeatEq.h" />
-    <ClInclude Include="SettingAnalyticProperties.h" />
-    <ClInclude Include="VoxelMeshGeneratorByVtk.h" />
-    <ClInclude Include="VtkIndexUtility.h" />
+    <ClInclude Include="FDMSolverForDiffusionEq.h" />
+    <ClInclude Include="vtkIndexUtility.h" />
+    <ClInclude Include="vtkSettingAnalyticProperties.h" />
+    <ClInclude Include="vtkVoxelMeshGenerator.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FDMSolverForHeatEq.cpp" />
+    <ClCompile Include="FDMSolverForDiffusionEq.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="SettingAnalyticProperties.cpp" />
-    <ClCompile Include="VoxelMeshGeneratorByVtk.cpp" />
+    <ClCompile Include="vtkSettingAnalyticProperties.cpp" />
+    <ClCompile Include="vtkVoxelMeshGenerator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

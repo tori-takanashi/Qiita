@@ -1,6 +1,6 @@
 #pragma once
 
-namespace VtkIndexUtility
+namespace vtkIndexUtility
 {
   template<typename T>
   const T ConvertXYZToVtkCellId(const T & in_x, const T & in_y, const T & in_z, const int in_cellDims[3])

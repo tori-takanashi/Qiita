@@ -15,16 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SettingAnalyticProperties.h">
+    <ClInclude Include="vtkVoxelMeshGenerator.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="FDMSolverForHeatEq.h">
+    <ClInclude Include="vtkSettingAnalyticProperties.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="VtkIndexUtility.h">
+    <ClInclude Include="FDMSolverForDiffusionEq.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="VoxelMeshGeneratorByVtk.h">
+    <ClInclude Include="vtkIndexUtility.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
@@ -32,13 +32,13 @@
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="SettingAnalyticProperties.cpp">
+    <ClCompile Include="vtkVoxelMeshGenerator.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="FDMSolverForHeatEq.cpp">
+    <ClCompile Include="vtkSettingAnalyticProperties.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="VoxelMeshGeneratorByVtk.cpp">
+    <ClCompile Include="FDMSolverForDiffusionEq.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
