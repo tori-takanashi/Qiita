@@ -11,6 +11,8 @@
 #include <vtkCellData.h>
 #include <vtkCell.h>
 
+#include <sstream>
+
 using namespace std;
 
 // İŒv“K“–‚Å‚·‚ª‹–‚µ‚Ä
@@ -33,6 +35,16 @@ void FDMSolverForDiffusionEq::SolveHeatEquationForAllStep(vtkUnstructuredGrid *o
   {
     if (!SolveHeatEquationForOneStep(out_field))
       break;
+
+    if (step % 20 == 0)
+    {
+      stringstream fileName;
+      fileName << "C:\\sandbox\\output\\Results" << step << ".vtu";
+      auto writer = vtkSmartPointer<vtkXMLDataSetWriter>::New();
+      writer->SetFileName(fileName.str().c_str());
+      writer->SetInputData(out_field);
+      writer->Update();
+    }
   }
   cout << step << "‚ÅI—¹" << endl;
 }

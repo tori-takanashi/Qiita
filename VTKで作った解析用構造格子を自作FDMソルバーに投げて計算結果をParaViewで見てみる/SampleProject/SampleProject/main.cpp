@@ -20,7 +20,7 @@ int main()
 {
   // •Â‹È–Ê“Ç‚ÝŽæ‚è
   auto reader = vtkSmartPointer<vtkDataSetReader>::New();
-  reader->SetFileName("C:\\test\\bunny.vtk");
+  reader->SetFileName("C:\\sandbox\\bunny.vtk");
   reader->Update();
 
   // PolyData‚É•ÏŠ·
@@ -58,7 +58,7 @@ int main()
   cout << "‰ðÍŠJŽn" << endl;
   const double alpha = 0.1;
   const double wallXYZBC[3] = { 10.0, 100.0, 40.0 };
-  const int endStep = 200;
+  const int endStep = 2000;
 
   shared_ptr<FDMSolverForDiffusionEq> solver;
   solver = make_shared<FDMSolverForDiffusionEq>();
@@ -67,10 +67,10 @@ int main()
   solver->SetWallXYZBC(wallXYZBC);
   solver->SolveHeatEquationForAllStep(field, endStep);
 
-  auto writer = vtkSmartPointer<vtkXMLDataSetWriter>::New();
-  writer->SetFileName("C:\\test\\Results.vtu");
-  writer->SetInputData(field);
-  writer->Update();
+  //auto writer = vtkSmartPointer<vtkXMLDataSetWriter>::New();
+  //writer->SetFileName("C:\\sandbox\\Results.vtu");
+  //writer->SetInputData(field);
+  //writer->Update();
 
   return 0;
 }
