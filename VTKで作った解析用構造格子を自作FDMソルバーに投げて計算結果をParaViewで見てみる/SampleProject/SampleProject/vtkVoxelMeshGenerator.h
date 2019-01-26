@@ -23,7 +23,7 @@ public:
   vtkUnstructuredGrid * GetOutput();
 
   // setter ‘‚«•ûŒÃ‚¢‚©‚à‚¾‚¯‚Ç‹–‚µ‚Ä‚­‚ê
-  void SetCellDimension(const int *in_dims) { memcpy_s(cellDims, sizeof(int) * 3, in_dims, sizeof(int) * 3); }
+  void SetCellDimensions(const int *in_dims) { memcpy_s(cellDims, sizeof(int) * 3, in_dims, sizeof(int) * 3); }
   void SetOffsets(const double *in_offsets) { memcpy_s(offsets, sizeof(double) * 6, in_offsets, sizeof(double) * 6); }
 
 private:

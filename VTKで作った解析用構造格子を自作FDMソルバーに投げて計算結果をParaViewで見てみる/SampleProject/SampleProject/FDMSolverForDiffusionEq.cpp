@@ -77,7 +77,7 @@ bool FDMSolverForDiffusionEq::SolveHeatEquationForOneStep(vtkUnstructuredGrid *o
   {
     const vtkIdType *xyzId = vtkIndexUtility::ConvertVtkCellIdToXYZ(vId, cellDims);
 
-    // 解析属性がCalculation以外なら飛ばす。
+    // 解析属性がAnalysis以外なら飛ばす。
     if (properties->GetTuple1(vId) != Analysis) continue;
 
     const double beforeRes = beforeResults->GetTuple1(vId);
@@ -172,7 +172,7 @@ void FDMSolverForDiffusionEq::SetBoundryCondition(vtkDoubleArray * in_results, v
   {
     vtkIdType propId = in_properties->GetTuple1(vId);
 
-    // 3Dモデル表面なら、周囲の属性がCalculationのボクセルに定義されている計算値の平均値をセット
+    // 3Dモデル表面なら、周囲の属性がAnalysisのボクセルに定義されている計算値の平均値をセット
     if (propId == Surface3DModel)
       SetAveValueFromSurroundings(vId, in_results, in_properties);
     // 壁

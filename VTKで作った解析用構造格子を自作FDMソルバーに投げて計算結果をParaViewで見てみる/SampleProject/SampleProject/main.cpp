@@ -20,7 +20,7 @@ int main()
 {
   // •Â‹È–Ê“Ç‚ÝŽæ‚è
   auto reader = vtkSmartPointer<vtkDataSetReader>::New();
-  reader->SetFileName("C:\\sandbox\\bunny.vtk");
+  reader->SetFileName("C:\\test\\bunny.vtk");
   reader->Update();
 
   // PolyData‚É•ÏŠ·
@@ -40,7 +40,7 @@ int main()
   shared_ptr<vtkVoxelMeshGenerator> voxelMeshGenerator = make_shared<vtkVoxelMeshGenerator>();
   voxelMeshGenerator->SetInputData(geometry->GetOutput());
 
-  voxelMeshGenerator->SetCellDimension(cellDims);
+  voxelMeshGenerator->SetCellDimensions(cellDims);
   voxelMeshGenerator->SetOffsets(offsets);
   voxelMeshGenerator->Update();
 
@@ -48,7 +48,7 @@ int main()
   shared_ptr<vtkSettingAnalyticProperties> analyticProperties;
   analyticProperties = make_shared<vtkSettingAnalyticProperties>();
 
-  analyticProperties->SetCellDimension(cellDims);
+  analyticProperties->SetCellDimensions(cellDims);
   analyticProperties->SetInputData(voxelMeshGenerator->GetOutput());
   analyticProperties->Update();
 
@@ -67,10 +67,10 @@ int main()
   solver->SetWallXYZBC(wallXYZBC);
   solver->SolveHeatEquationForAllStep(field, endStep);
 
-  //auto writer = vtkSmartPointer<vtkXMLDataSetWriter>::New();
-  //writer->SetFileName("C:\\sandbox\\Results.vtu");
-  //writer->SetInputData(field);
-  //writer->Update();
+  auto writer = vtkSmartPointer<vtkXMLDataSetWriter>::New();
+  writer->SetFileName("C:\\test\\Results.vtu");
+  writer->SetInputData(field);
+  writer->Update();
 
   return 0;
 }

@@ -20,7 +20,7 @@ public:
   vtkSettingAnalyticProperties() {};
   ~vtkSettingAnalyticProperties() {};
 
-  void SetCellDimension(const int *in_dims) { memcpy_s(cellDims, sizeof(int) * 3, in_dims, sizeof(int) * 3); }
+  void SetCellDimensions(const int *in_dims) { memcpy_s(cellDims, sizeof(int) * 3, in_dims, sizeof(int) * 3); }
   void SetInputData(vtkUnstructuredGrid * in_voxelMesh);
   void Update();
   vtkUnstructuredGrid * GetOutput();
